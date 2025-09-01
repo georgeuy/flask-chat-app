@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGHTools - Comunicaciones</title>
+</head>
+<body>
+    
+    <div class="container">
+
+        <h1>Bienvenido a SGHTools Comunicaciones</h1>
+
+        <p class="tagline">
+            {% with messages = get_flashed_messages(with_categories = true) %}
+                {% if messages %}
+                    <ul class="flashes">
+                        {% for category, message in messages %}
+                         <li class="{{category}}">{{message}}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </p>
+
+
+        <form action="" method="post">
+
+            <label for="nickname">Cual será tu alias en al comunicación</label>
+            <input type="text" id="nickname" name="nickname" placeholder="e.g., El lobo feroz">
+
+            <label for="room">Crea una Sala</label>
+            <input type="text" id="room" name="room" placeholder="e.g., pocker">
+
+            <button type="submit">Comenzar</button>
+        </form>
+
+    </div>
+
+</body>
+</html>
